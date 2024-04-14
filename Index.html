@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CT SkillTest</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Bebas+Neue&family=Oswald&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      .layer-container::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+      }
+
+      .layer-container {
+        height: 100%;
+        overflow-y: scroll;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: relative;
+      }
+
+      .layer1 {
+        background-image: url(./assets/BG1.png);
+        background-size: cover;
+        background-position: top;
+      }
+
+      .layer2 {
+        position: relative;
+        background-image: url(./assets/BG2.png);
+        background-size: cover;
+        background-position: bottom;
+      }
+
+      .layer3 {
+        background-image: url(./assets/BG3.png);
+      }
+
+      .content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        color: white;
+        font-size: 24px;
+        text-align: center;
+      }
+
+      .logo {
+        position: absolute;
+        top: 10px;
+        left: 150px;
+        z-index: 1;
+      }
+
+      .button-container {
+        position: absolute;
+        top: 20px;
+        left: 950px;
+        z-index: 1;
+        display: flex;
+      }
+
+      .button {
+        color: white;
+        cursor: pointer;
+        font-style: italic;
+        text-decoration: underline;
+        margin-right: 10px;
+        background: none;
+        outline: none;
+        border: none;
+        font-size: 12px;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        line-height: 20px;
+        font-family: "Lato", sans-serif;
+      }
+
+      .logo img {
+        width: 50px;
+        height: auto;
+      }
+      .losangeles {
+        color: #4d4d4d;
+        letter-spacing: 6px;
+        font-weight: bold;
+      }
+
+      .mountains {
+        color: #414f6b;
+        letter-spacing: 9px;
+        font-weight: bold;
+      }
+      .head {
+        margin-top: -200px;
+        text-align: center;
+        font-size: 80px;
+        line-height: 65px;
+        font-weight: bold;
+        font-family: "Bebas Neue", sans-serif;
+      }
+      .footercontent {
+        font-size: 25px;
+        line-height: 20px;
+        font-weight: bold;
+        font-family: "Bebas Neue", sans-serif;
+        justify-content: space-between;
+        margin-right: 400px;
+      }
+      .head1 {
+        text-align: left;
+        margin-left: 200px;
+        font-size: 25px;
+        line-height: 20px;
+        font-weight: bold;
+        font-family: "Bebas Neue", sans-serif;
+      }
+      .Copyright {
+        font-size: 12px;
+        letter-spacing: 1px;
+        line-height: 20px;
+        text-transform: uppercase;
+        color: #63769d;
+        font-weight: 900;
+        font-style: italic;
+        font-family: "Lato";
+      }
+      .losangeles1 {
+        color: #4d4d4d;
+        letter-spacing: 2px;
+        font-weight: bold;
+        margin-left: 10px;
+      }
+
+      .mountains1 {
+        padding: 10px;
+        color: #414f6b;
+        letter-spacing: 3px;
+        font-weight: bold;
+      }
+
+      .losangeles2 {
+        color: gray;
+        letter-spacing: 2px;
+        font-weight: bold;
+        margin-left: 70px;
+      }
+
+      .mountains2 {
+        color: gray;
+        letter-spacing: 3px;
+        font-weight: bold;
+        margin-left: 70px;
+      }
+
+      .btn2 {
+        margin-left: 930px;
+        margin-top: -50px;
+      }
+      .btn2 button {
+        color: #414f6b;
+      }
+      .History {
+        position: absolute;
+        top: -2.8%;
+        left: 25%;
+        transform: translateX(-50%);
+        opacity: 0.502;
+        font-size: 136px;
+        color: #414f6b;
+        font-weight: 700;
+        font-family: "Oswald", sans-serif;
+      }
+      .lorem {
+        position: absolute;
+        font-size: 14px;
+        margin-bottom: 110px;
+        margin-left: 150px;
+        line-height: 24px;
+        color: #000000;
+        font-weight: 300;
+        font-family: "Lato", sans-serif;
+      }
+      h3 {
+        position: absolute;
+        top: 5%;
+        left: 29%;
+        font-size: 45px;
+        color: #414f6b;
+        font-family: "Oswald", sans-serif;
+      }
+      .carousel {
+        overflow: hidden;
+        background: linear-gradient(
+          to bottom,
+          rgba(65, 79, 107, 0.5),
+          rgba(65, 79, 107, 5)
+        );
+        height: 350px;
+        width: 100vw;
+        z-index: 1;
+      }
+      .swiper-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .swiper-wrapper {
+        margin-top: 40px;
+        display: flex;
+      }
+
+      .swiper-slide {
+        opacity: 100%;
+        width: 150px;
+        height: 150px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .swiper-slide img {
+        max-width: 100%;
+        max-height: 100%;
+      }
+
+      .swiper-pagination {
+        position: absolute;
+        margin-bottom: 750px;
+        left: 50;
+      }
+
+      .swiper-pagination-bullet {
+        width: 10px;
+        height: 10px;
+        background-color: #fff;
+        opacity: 0.5;
+        border-radius: 50%;
+        margin: 0 5px;
+        cursor: pointer;
+        transition: opacity 0.3s ease;
+      }
+
+      .swiper-pagination-bullet-active {
+        opacity: 1;
+      }
+
+      .teamcard {
+        margin-top: 200px;
+        background-color: white;
+        position: absolute;
+        width: 100%;
+        height: 150px;
+      }
+      .team {
+        margin-top: -30px;
+        margin-left: 225px;
+        position: absolute;
+        font-size: 136px;
+        color: rgb(180, 179, 179);
+        font-weight: 700;
+        font-family: "Oswald", sans-serif;
+      }
+      .lorem1 {
+        position: absolute;
+        font-size: 14px;
+        top: 40px;
+        margin-left: 500px;
+        line-height: 24px;
+        color: #000000;
+        font-weight: 300;
+        font-family: "Lato", sans-serif;
+      }
+
+      .Schedule {
+        cursor: pointer;
+        position: absolute;
+        top: -3px;
+        left: 230px;
+      }
+      .ScheduleBG {
+        background-color: #414f6b;
+        position: relative;
+        width: 100vw;
+        margin-left: -230px;
+        height: 42px;
+        text-align: center;
+      }
+      .Schedule button {
+        cursor: pointer;
+        outline: none;
+        border: none;
+        text-align: center;
+        background: none;
+        padding: 5px 20px;
+        margin: 2px;
+        padding-left: 20px;
+        padding-right: 20px;
+        font-size: 20px;
+        letter-spacing: 1px;
+        color: rgb(180, 179, 179);
+        font-weight: 700;
+        font-family: "Oswald", sans-serif;
+        transition: background-color 0.3s ease;
+      }
+
+      #bt1 {
+        margin-right: 70px;
+      }
+
+      .Schedule button:hover {
+        color: #414f6b;
+        background-color: rgb(180, 179, 179);
+        text-decoration: underline;
+      }
+      .Selected {
+        color: #414f6b !important;
+        background-color: rgb(180, 179, 179) !important;
+        text-decoration: underline;
+      }
+      .box1 {
+        background-color: rgba(255, 255, 255, 0.6);
+        padding: 2px;
+        margin: 2px;
+        margin-top: 100px;
+        max-width: 500px;
+      }
+
+      .box1 h1 {
+        margin-left: 30px;
+        margin-top: 4px;
+        padding: 6px;
+        color: #414f6b;
+        font-family: "Oswald", sans-serif;
+      }
+
+      .box1 ul li {
+        margin-top: 1px;
+        list-style: none;
+        margin-bottom: 10px;
+        width: 320px;
+        font-size: 16px;
+        line-height: 24px;
+        color: #000000;
+        font-weight: 300;
+        font-family: "Lato";
+      }
+      .box1 ul {
+        margin-top: -20px;
+      }
+
+      .box1 ul li .name {
+        margin-left: 50px; /* Add margin between date and name */
+      }
+      .footer {
+        background-color: #414f6b;
+        position: absolute;
+        width: 100vw;
+        height: 70px;
+        display: flex;
+        align-items: center; /* Align items vertically */
+        justify-content: center; /* Center content horizontally */
+        color: white; /* Set text color */
+      }
+      .footerlogo {
+        opacity: 0.6;
+        position: absolute;
+        width: 50px;
+        height: auto;
+        left: 220px;
+        bottom: 12px;
+      }
+      .headlogo {
+        position: absolute;
+        width: 50px;
+        height: auto;
+        left: 150px;
+        bottom: -60px;
+        border: 1px solid rgb(207, 205, 205);
+        border-radius: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="layer-container layer1">
+      <div class="content">
+        <h1 class="head">
+          <span class="losangeles" >LOSANGELES</span>
+          <br />
+          <span class="mountains">MOUNTAINS</span>
+        </h1>
+        <div class="logo" style="position: absolute; left: 100px; top: 600">
+          <img src="./assets/logo.png" alt="Logo" />
+        </div>
+        <div class="button-container">
+          <button class="button" id="history">01. History</button>
+          <button class="button" id="climb">02. Team</button>
+        </div>
+      </div>
+    </div>
+    <div style="height: 70px" class="break">
+      <h1 class="head1">
+            <img src="./assets/logo.png" class="headlogo" />
+        <span class="losangeles1">LOSANGELES</span>
+        <br />
+        <span class="mountains1">MOUNTAINS</span>
+      </h1>
+      <div class="btn2">
+        <button class="button" id="history">01. History</button>
+        <button class="button" id="climb">02. Team</button>
+      </div>
+    </div>
+    <div class="layer-container layer2">
+      <div class="content" id="history">
+        <h1 class="History">
+          01.
+          <h3>HISTORY</h3>
+        </h1>
+        <p class="lorem">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, culpa
+          eius? Quod doloremque ea quibusdam ut illum beatae quia maiores
+          provident <br />
+          a cupiditate perferendis non, neque et adipisci incidunt ipsa. Lorem
+          ipsum dolor, sit amet consectetur adipisicing elit. Ut expedita
+          consectetur ex nobis necessitatibus <br />
+          veniam porro voluptates tenetur repudiandae perferendis, accusantium
+          inventore a totam? Totam qui ad consequuntur optio ipsa. Lorem ipsum
+          dolor sit amet consectetur
+        </p>
+      </div>
+      <div class="carousel swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="/assets/Img1.png" alt="Image 1" />
+          </div>
+          <div class="swiper-slide">
+            <img src="/assets/Img2.png" alt="Image 2" />
+          </div>
+          <div class="swiper-slide">
+            <img src="/assets/Img1.png" alt="Image 1" />
+          </div>
+          <div class="swiper-slide">
+            <img src="/assets/Img2.png" alt="Image 2" />
+          </div>
+          <div class="swiper-slide">
+            <img src="/assets/Img1.png" alt="Image 1" />
+          </div>
+          <div class="swiper-slide">
+            <img src="/assets/Img2.png" alt="Image 2" />
+          </div>
+          <div class="swiper-slide">
+            <img src="/assets/Img1.png" alt="Image 1" />
+          </div>
+          <div class="swiper-slide">
+            <img src="/assets/Img2.png" alt="Image 2" />
+          </div>
+          <!-- Add more slides as needed -->
+        </div>
+        <!-- Add pagination -->
+        <div class="swiper-pagination"></div>
+        <!-- Navigation arrows -->
+        <div class="teamcard">
+          <h1 class="team" id="climb">
+            02.
+            <h3>CLIMB</h3>
+          </h1>
+          <p class="lorem1">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero,
+            culpa eius? Quod doloremque ea quibusdam ut illum beatae quia
+            maiores provident Lorem ipsum dolor sit amet consectetur adipisicing
+            elit.
+          </p>
+        </div>
+      </div>
+
+      <div class="layer-container layer3">
+        <div class="Schedule">
+          <div class="ScheduleBG">
+            <button id="btn1">MOUNTAIN 1</button>
+            <button id="btn2">MOUNTAIN 2</button>
+          </div>
+
+          <div id="page1" style="display: none">
+            <div class="box1">
+              <h1>SCHEDULE</h1>
+              <ul>
+                <li>
+                  <span>25 Nov 2016</span
+                  ><span class="name">Vestibulum viverra</span>
+                </li>
+                <li>
+                  <span>28 Nov 2016</span
+                  ><span class="name">Vestibulum viverra</span>
+                </li>
+                <li>
+                  <span>18 Dec 2016</span
+                  ><span class="name">Vestibulum viverra</span>
+                </li>
+                <li>
+                  <span>7 Jan 2017</span
+                  ><span class="name">Vestibulum viverra</span>
+                </li>
+              </ul>
+            </div>
+            <!-- Add details for button 1 here -->
+          </div>
+
+          <div id="page2" style="display: none">
+            <div class="box1">
+              <h1>SCHEDULE</h1>
+              <ul>
+                <li>
+                  <span>20 Jan 2017</span
+                  ><span class="name">Vestibulum viverra</span>
+                </li>
+                <li>
+                  <span>4 Feb 2017</span
+                  ><span class="name">Vestibulum viverra</span>
+                </li>
+                <li>
+                  <span>30 June 2017</span
+                  ><span class="name">Vestibulum viverra</span>
+                </li>
+                <li>
+                  <span>16 Oct 2017</span
+                  ><span class="name">Vestibulum viverra</span>
+                </li>
+              </ul>
+            </div>
+            <!-- Add details for button 2 here -->
+          </div>
+        </div>
+        <div class="content"></div>
+        <div class="footer">
+          <h1 class="footercontent">
+            <img src="./assets/logo.png" class="footerlogo" alt="Logo">
+            <span class="losangeles2">LOSANGELES</span>
+            <br />
+            <span class="mountains2">MOUNTAINS</span>
+          </h1>
+          <span class="Copyright">Copyright 2016 all right reserversed.</span>
+        </div>
+      </div>
+    </div>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="/App.js"></script>
+  </body>
+</html>
