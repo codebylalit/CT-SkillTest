@@ -35,3 +35,18 @@ document.getElementById("btn2").addEventListener("click", function () {
   btn1.classList.remove("Selected");
   document.getElementById("page2").style.display = "block";
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const historyBtn = document.getElementById("history");
+  const teamBtn = document.getElementById("climb");
+  const historySection = document.getElementById("history-section");
+  const teamSection = document.getElementById("climb-section");
+
+  historyBtn.addEventListener("click", function () {
+    historySection.scrollIntoView({ behavior: "smooth" });
+  });
+
+  teamBtn.addEventListener("click", function () {
+    teamSection.scrollIntoView({ behavior: "smooth" });
+  });
+});
